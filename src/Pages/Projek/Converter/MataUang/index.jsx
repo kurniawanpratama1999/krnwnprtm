@@ -39,7 +39,7 @@ const MataUang = () => {
     const sum = calculate * e.value;
     setUang((prev) => ({ ...prev, uang1: e.value, uang2: sum }));
   };
-  
+
   const convertMataUang2 = (e) => {
     const euroToUang1 = mataUang[targetSelect1.current.value];
     const euroToUang2 = mataUang[targetSelect2.current.value];
@@ -60,6 +60,7 @@ const MataUang = () => {
   };
 
   useEffect(() => {
+    let ignore = false
     fetchNamaMataUang()
       .then((res) => {
         if (res.success) {
@@ -81,6 +82,10 @@ const MataUang = () => {
         }
       })
       .catch((err) => setJenisMataUang({}));
+
+      return () => {
+        ignore = true
+      }
   }, []);
   return (
     <>

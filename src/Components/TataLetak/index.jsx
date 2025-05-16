@@ -34,7 +34,10 @@ const TataLetak = () => {
 
   useEffect(() => {
     const namaLokasi = lokasi.pathname;
-    if (namaLokasi.toString().trim() === "/") return navigasi("/beranda");
+
+    if (namaLokasi.toString().trim() === "/") {
+      navigasi("/beranda");
+    }
   }, [lokasi]);
   return (
     <>
