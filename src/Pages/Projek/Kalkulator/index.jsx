@@ -15,7 +15,18 @@ const Kalkulator = () => {
       setInput("");
       setResult(0);
     } else if (value === "D") {
-      setInput((prev) => prev.slice(0, -1));
+      setInput((prev) => {
+        if (prev.length <= 1 && prev.trim() === "") {
+          setResult(0);
+          return "";
+        } else {
+          const seperate = prev.match(/[a-zA-Z]+|[0-9]|[\+\-\*\/\^\(\)]/g);
+          return seperate
+            .filter((_, index) => index < seperate.length - 1)
+            .map((val) => val)
+            .join("");
+        }
+      });
     } else if (value === "log") {
       setInput((prev) => prev + `${value}(`);
     } else {
