@@ -15,10 +15,10 @@ const Beranda = () => {
             sint, velit minima, doloremque repellendus sit rerum laborum
             laboriosam debitis."
           </p>
-          <article className="p-3 flex flex-col gap-5">
-            <div className="border-b-1 pb-4 w-fit">
+          <article className="p-3 flex flex-col gap-5 overflow-hidden">
+            <div className="border-b-1 pb-4 w-full">
               <h3 className="text-xl mb-2 font-bold">Pengalaman</h3>
-              <div className="flex gap-3">
+              <div className="flex gap-3 overflow-auto">
                 {[
                   { company: "Prima Freshmart", job: "Crew Store" },
                   { company: "Astro Technology", job: "Driver" },
@@ -35,9 +35,9 @@ const Beranda = () => {
               </div>
             </div>
 
-            <div className="border-b-1 pb-4 w-fit">
+            <div className="border-b-1 pb-4 w-full">
               <h3 className="text-xl mb-2 font-bold">Pendidikan</h3>
-              <div className="flex gap-3">
+              <div className="flex gap-3 overflow-auto">
                 {[
                   { company: "Univ. Pamulang", job: "S1 Manejemen" },
                   { company: "SMKN 59 Jakarta", job: "Pemasaran" },
@@ -53,7 +53,7 @@ const Beranda = () => {
               </div>
             </div>
 
-            <div className="border-b-1 pb-4 w-fit">
+            <div className="border-b-1 pb-4 w-full">
               <h3 className="text-xl mb-2 font-bold">Projek</h3>
               <div className="flex gap-3 overflow-auto">
                 {[
